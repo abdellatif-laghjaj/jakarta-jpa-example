@@ -9,9 +9,9 @@ import javax.persistence.Query;
 import java.sql.*;
 
 public class LoginDao {
-    @PersistenceContext(unitName = "bdd_tpapp_UP")
+    @PersistenceContext(unitName = "persistence")
     public User check(String email, String password) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bdd_tpapp_UP");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
         EntityManager em = emf.createEntityManager();
 
         User user = null;

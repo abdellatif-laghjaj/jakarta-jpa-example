@@ -5,7 +5,7 @@
          version="5.0">
     <servlet>
         <servlet-name>ConnexionServlet</servlet-name>
-        <servlet-class>com.jetbrains.firstpr.Login</servlet-class>
+        <servlet-class>com.jetbrains.firstpr.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

@@ -4,7 +4,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="bdd_tpapp_UP">
+    <persistence-unit name="persistence">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.jetbrains.firstpr.Models.User</class>
 

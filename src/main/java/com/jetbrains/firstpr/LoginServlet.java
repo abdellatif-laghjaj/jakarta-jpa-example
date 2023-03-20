@@ -12,14 +12,10 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 
 @WebServlet(name = "LoginServlet", value = "/login")
-public class Login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,7 +34,7 @@ public class Login extends HttpServlet {
 
         if (user != null) {
             HttpSession session = request.getSession();
-            session.setAttribute("fullname", user.getFull_name());
+            session.setAttribute("fullname", user.getFullName());
             PrintWriter out = response.getWriter();
             destPage = "home.jsp";
         } else {
