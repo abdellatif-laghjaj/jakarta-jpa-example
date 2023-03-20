@@ -17,7 +17,7 @@ public class HelloServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         HttpSession session = request.getSession();
-       email = (String) session.getAttribute("email");
+        email = (String) session.getAttribute("email");
 
         // Hello
         PrintWriter out = response.getWriter();
@@ -26,7 +26,6 @@ public class HelloServlet extends HttpServlet {
         out.println("<h1>Welcome</h1>");
         out.println("<h3>" + email + "</h3>");
         out.println("</body></html>");
-
     }
 
     public void destroy() {
