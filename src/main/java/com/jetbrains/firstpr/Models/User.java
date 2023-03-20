@@ -15,7 +15,6 @@ public class User {
     private String fullName;
 
     public User() {
-
     }
 
     public User(Long id, String email, String password) {
@@ -52,8 +51,8 @@ public class User {
         return fullName;
     }
 
-    public void setFullName(String full_name) {
-        this.fullName = full_name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }
 
