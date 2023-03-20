@@ -28,7 +28,7 @@
 </body>
 <script type="text/javascript">
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#loginForm").validate({
             rules: {
                 email: {
