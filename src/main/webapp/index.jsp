@@ -3,53 +3,13 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<h1><%= "Login Form" %>
-</h1>
-<br/>
-
-<form action="login" method="post">
-
-    <input type="text" name="email" placeholder="your email...">
-
-    <input type="password" placeholder="your password" name="password">
-    <br>${message}
-    <br><br>
-    <button type="submit">Submit</button>
+<body class="flex flex-col items-center justify-center h-screen" data-theme="corporate">
+<form action="get-weather-servlet" method="post" class="flex flex-col w-[400px] space-y-2">
+    <input type="text" name="city" placeholder="Enter your city" class="input input-bordered"/>
+    <button type="submit" class="btn btn-primary text-primary">Search</button>
 </form>
 </body>
-<script type="text/javascript">
-
-    $(document).ready(function () {
-        $("#loginForm").validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-
-                password: "required",
-            },
-
-            messages: {
-                email: {
-                    required: "Please enter email",
-                    email: "Please enter a valid email address"
-                },
-
-                password: "Please enter password"
-            }
-        });
-
-    });
-</script>
-
 </html>
