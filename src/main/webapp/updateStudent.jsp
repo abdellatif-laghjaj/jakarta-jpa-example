@@ -23,12 +23,14 @@
     <% } %>
 </div>
 <h3>Add Student #${param.id}</h3>
-<form action="${pageContext.request.contextPath}/students/update?id=${param.id}" method="post"
+<form action="update-student-servlet" method="post"
       class="flex flex-col w-[400px] space-y-2">
     <input type="text" name="firstname" placeholder="your first name" class="input input-bordered"
            value="${student.getFirstname()}"/>
     <input type="text" name="lastname" placeholder="your last name" class="input input-bordered"
            value="${student.getLastname()}"/>
+    <!-- hidden input to send id to servlet -->
+    <input type="hidden" name="id" value="${student.getId()}"/>
     <button type="submit" class="btn btn-primary text-primary">Update</button>
 </form>
 </body>
