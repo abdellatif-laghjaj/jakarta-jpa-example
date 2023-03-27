@@ -5,28 +5,37 @@ import antlr.collections.List;
 import com.jetbrains.firstpr.Models.User;
 
 import javax.persistence.*;
-import javax.persistence.Query;
+import  javax.persistence.Query;
 import java.sql.*;
 
 public class LoginDao {
-    @PersistenceContext(unitName = "persistence")
-    public User check(String email, String password) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistence");
+
+
+    @PersistenceContext( unitName = "bdd_tpapp_UP" )
+
+    public User check( String email,String password ){
+
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("bdd_tpapp_UP");
+
         EntityManager em = emf.createEntityManager();
 
-        User user = null;
-        Query requete = em.createNativeQuery("SELECT * FROM user WHERE email = ? and password = ? ", User.class);
-        requete.setParameter(1, email);
-        requete.setParameter(2, password);
+        Query requete = em.createNativeQuery("SELECT * FROM user WHERE email = ? and password = ? " ,User.class);
+        requete.setParameter( 1, email );
+        requete.setParameter(2,password);
+
+
 
         try {
-            return (User) requete.getSingleResult();
+            return (User) requete .getSingleResult();
         } catch (NoResultException e) {
             return null;
         }
+
     }
 
 //    public User validate(String email,String password) throws SQLException,ClassNotFoundException {
+//
+//
 //        Class.forName("com.mysql.cj.jdbc.Driver");
 //
 //        Connection connection = DriverManager

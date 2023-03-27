@@ -5,6 +5,7 @@
   Time: 3:45 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page session="true" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -16,7 +17,10 @@
 <body>
 
 <div style="text-align: center">
-    <h1> hey ${fullname}</h1>
+    <c:if test="${sessionScope.fullname == null}">
+        <h1>Hey Guest</h1>
+    </c:if>
+    <h1>hey ${ sessionScope.fullname }</h1>
     <br><br>
     <a href="/logout">Logout</a>
 </div>

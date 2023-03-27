@@ -5,11 +5,25 @@
          version="5.0">
     <servlet>
         <servlet-name>ConnexionServlet</servlet-name>
-        <servlet-class>com.jetbrains.firstpr.LoginServlet</servlet-class>
+        <servlet-class>com.jetbrains.firstpr.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddStudentServlet</servlet-name>
+        <servlet-class>com.jetbrains.firstpr.AddStudentServlet</servlet-class>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>ConnexionServlet</servlet-name>
         <url-pattern>/connexion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddStudentServlet</servlet-name>
+        <url-pattern>/add-student</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StudentsController</servlet-name>
+        <url-pattern>/students/*</url-pattern>
     </servlet-mapping>
 </web-app>

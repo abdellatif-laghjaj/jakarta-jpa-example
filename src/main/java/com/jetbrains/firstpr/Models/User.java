@@ -3,20 +3,21 @@ package com.jetbrains.firstpr.Models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name="user")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy= GenerationType.IDENTITY )
     private Long id;
 
     private String email;
     private String password;
-    private String fullName;
 
-    public User() {
-    }
+    private String full_name;
 
+    public User(){
+
+}
     public User(Long id, String email, String password) {
         this.id = id;
         this.email = email;
@@ -47,12 +48,14 @@ public class User {
         this.password = password;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getFull_name() {
+        return full_name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
     }
+
+
 }
 
