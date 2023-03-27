@@ -27,6 +27,13 @@ public class UpdateStudentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        int studentId = request.getParameter("id") != null ? Integer.parseInt(request.getParameter("id")) : 0;
+        String firstName = request.getParameter("firstname");
+        String lastName = request.getParameter("lastname");
+        Student student = studentDao.findStudent(studentId);
+        student.setFirstname(firstName);
+        student.setLastname(lastName);
+        studentDao.updateStudent(student, studentId);
+        response.sendRedirect(request.getContextPath() + "/students");
     }
 }
