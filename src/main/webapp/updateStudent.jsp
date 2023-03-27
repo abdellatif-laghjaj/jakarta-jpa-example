@@ -1,4 +1,5 @@
 <%@ page import="com.jetbrains.firstpr.Models.Student" %>
+<%@ page import="com.jetbrains.firstpr.Connection.StudentDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -21,8 +22,8 @@
     </p>
     <% } %>
 </div>
-<h3>Add Student</h3>
-<form action="${pageContext.request.contextPath}/students/update?id=${id}" method="post"
+<h3>Add Student #${param.id}</h3>
+<form action="${pageContext.request.contextPath}/students/update?id=${param.id}" method="post"
       class="flex flex-col w-[400px] space-y-2">
     <input type="text" name="firstname" placeholder="your first name" class="input input-bordered"
            value="${student.getFirstname()}"/>

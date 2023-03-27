@@ -9,7 +9,7 @@
     </servlet>
     <servlet>
         <servlet-name>AddStudentServlet</servlet-name>
-        <servlet-class>com.jetbrains.firstpr.AddStudentServlet</servlet-class>
+        <servlet-class>com.jetbrains.firstpr.Controllers.AddStudentServlet</servlet-class>
     </servlet>
 
 
@@ -20,10 +20,5 @@
     <servlet-mapping>
         <servlet-name>AddStudentServlet</servlet-name>
         <url-pattern>/add-student</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>StudentsController</servlet-name>
-        <url-pattern>/students/*</url-pattern>
     </servlet-mapping>
 </web-app>

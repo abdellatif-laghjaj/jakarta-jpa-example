@@ -1,4 +1,4 @@
-package com.jetbrains.firstpr;
+package com.jetbrains.firstpr.Controllers;
 
 import com.jetbrains.firstpr.Connection.StudentDao;
 import com.jetbrains.firstpr.Models.Student;
